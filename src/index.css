@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-site-bg: #0A0A0A;
+  --color-site-card: #111111;
+  --color-site-border: #1C1C1C;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  @apply bg-white text-gray-900 antialiased transition-colors duration-200 dark:bg-[var(--color-site-bg)] dark:text-white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-[#111111];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-300 dark:bg-[#333333];
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-[#444444];
+}
+
+::selection {
+  @apply bg-indigo-600/20 text-indigo-900 dark:bg-indigo-400/20 dark:text-indigo-100;
+}
+
+html {
+  scroll-behavior: smooth;
+}
